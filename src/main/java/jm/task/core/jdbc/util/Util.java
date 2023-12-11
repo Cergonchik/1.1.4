@@ -11,10 +11,12 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "cergon@.15071988";
 
-    public static Connection getConnect() {
-        Connection connection = null;
-        try {
+    private static Connection connection = null;
+    private Util() {
 
+    }
+    public static Connection getConnect() {
+        try {
             connection = DriverManager.getConnection(URL, USERNAME
                     , PASSWORD);
         } catch (SQLException  e) {
